@@ -10,11 +10,13 @@ public class StalactiteGenerator : MonoBehaviour
     //Variables
     public float stalactiteSpeed;
     public float iHaveAStalactite;
+    private bool ready;
 
     // Start is called before the first frame update
     void Awake()
     {
         stalactiteSpeed = 12f;
+        ready = true;
     }
 
     // Update is called once per frame
@@ -24,9 +26,11 @@ public class StalactiteGenerator : MonoBehaviour
 
         if(rcHit2D)
         {
-            if(rcHit2D.transform.gameObject.CompareTag("Player"))
+            if(rcHit2D.transform.gameObject.CompareTag("Player") && ready)
             {
                 Shoot();
+                ready = false;
+                Invoke("GetReady", 1f);
             }
         }
     }
@@ -34,7 +38,6 @@ public class StalactiteGenerator : MonoBehaviour
     private void Shoot()
     {
         Quaternion rotation = new Quaternion(0f, 0f, 0f, 0f);
-        rotation.eulerAngles = new Vector3(0f, 0f, 0f);
         
         GameObject stalactite = Instantiate(stalactitePrefab, gameObject.transform.position, rotation);
         
@@ -43,5 +46,10 @@ public class StalactiteGenerator : MonoBehaviour
         Vector2 direction = Vector2.down;
         
         stalactiteRB.AddForce(direction*stalactiteSpeed, ForceMode2D.Impulse);
+    }
+
+    private void GetReady()
+    {
+        ready = true;
     }
 }

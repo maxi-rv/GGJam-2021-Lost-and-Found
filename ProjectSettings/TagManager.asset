@@ -45,23 +45,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
+  - name: Ambient-Background
     uniqueID: 316960239
     locked: 0
   - name: Projectiles
     uniqueID: 3776868073
     locked: 0
-  - name: BG-Detail
+  - name: Ambient-Platforms
     uniqueID: 821080429
+    locked: 0
+  - name: Ambient-Foreground
+    uniqueID: 82478293
+    locked: 0
+  - name: Objects
+    uniqueID: 1168709555
     locked: 0
   - name: Player
     uniqueID: 3465465217
     locked: 0
   - name: Enemy
     uniqueID: 2049153843
-    locked: 0
-  - name: Objects
-    uniqueID: 1168709555
     locked: 0
   - name: Foreground
     uniqueID: 529362711

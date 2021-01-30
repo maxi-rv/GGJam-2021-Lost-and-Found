@@ -16,9 +16,11 @@ public class PlayerController : MonoBehaviour
     private CheckWall checkWall;
     private Material matDefault;
     [SerializeField] private Material matWhite;
-
+    
     // VARIABLES
-    [SerializeField] private int life;
+    public float maxHP = 6f;
+    public float currentHP;
+    public int collectibles;
     [SerializeField] private int form;
     [SerializeField] private bool secondJumpAvailable;
     private float moveSpeed;
@@ -28,13 +30,15 @@ public class PlayerController : MonoBehaviour
     //Input
     private float HorizontalAxis;
     private float VerticalAxis;
+    private bool JumpButton;
 
     //Initializes
     void Awake()
     {
         // VARIABLES
         form = 1;
-        life = 6;
+        currentHP = maxHP;
+        collectibles = 0;
         moveSpeed = 9f;
         jumpForce = 17f;
         secondJumpAvailable = true;
@@ -76,7 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         CheckHit();
         CheckGround();
-        CheckMovementInput();
+        Movement();
     }
 
     // Update is called once per frame.
@@ -86,8 +90,9 @@ public class PlayerController : MonoBehaviour
         // Gets Axis Input
         HorizontalAxis = Input.GetAxisRaw("Horizontal");
         VerticalAxis = Input.GetAxisRaw("Vertical");
+        JumpButton = Input.GetButtonDown("Jump");
 
-        if(Input.GetButtonDown("Jump"))
+        if(JumpButton)
         {
             if (onTheGround)
             {
@@ -100,12 +105,12 @@ public class PlayerController : MonoBehaviour
                 secondJumpAvailable = false;
             }
 
-            if (checkWall.againstWallRight)
+            if (!onTheGround && checkWall.againstWallRight)
             {
                 WallJump(-1);
             }
 
-            if (checkWall.againstWallLeft)
+            if (!onTheGround && checkWall.againstWallLeft)
             {
                 WallJump(1);
             }
@@ -125,11 +130,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // Checks Input, calls for Movement, and sets facing side.
-    private void CheckMovementInput()
+    private void Movement()
     {
-        
-
-        
         // If Left or Right is pressed.
         if (HorizontalAxis > 0.5f || HorizontalAxis < -0.5f)
         {
@@ -208,7 +210,7 @@ public class PlayerController : MonoBehaviour
             secondJumpAvailable = true;
         }
 
-        if (rigidBody2D.velocity.y <= 1f)
+        if (!onTheGround && rigidBody2D.velocity.y <= 0f)
         {
             animator.SetBool("Falling", true);
         }
@@ -228,24 +230,16 @@ public class PlayerController : MonoBehaviour
     {
         checkHit.isHurt = false;
         hurtBox.enabled = false;
-        life--;
+        currentHP--;
 
         // Make a knockback or some hurting effect!!!
         FlashWhite();
-
-        if(life<=0)
-        {
-            KillItself();
-        }
-        else
-        {
-            Invoke("FlashBack", 0.1f);
-            Invoke("FlashWhite", 0.2f);
-            Invoke("FlashBack", 0.3f);
-            Invoke("FlashWhite", 0.4f);
-            Invoke("FlashBack", 0.5f);
-            Invoke("StopHurt", 0.6f);
-        }
+        Invoke("FlashBack", 0.1f);
+        Invoke("FlashWhite", 0.2f);
+        Invoke("FlashBack", 0.3f);
+        Invoke("FlashWhite", 0.4f);
+        Invoke("FlashBack", 0.5f);
+        Invoke("StopHurt", 0.6f);
     }
 
     private void FlashWhite()
@@ -263,13 +257,13 @@ public class PlayerController : MonoBehaviour
     {
         hurtBox.enabled = true;
     }
-    private void KillItself()
+
+    private void OnTriggerEnter2D(Collider2D other) 
     {
-        Invoke("StopHurt", 0.1f);
-
-        gameObject.SetActive(false);
-        //Destroy(gameObject);
-
-        //DETENER EL JUEGO!!!
+        if(other.gameObject.CompareTag("Object"))
+        {
+            Destroy(other.gameObject);
+            collectibles++;
+        }
     }
 }
