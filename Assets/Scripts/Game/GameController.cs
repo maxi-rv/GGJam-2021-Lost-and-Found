@@ -31,11 +31,17 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        audioController.Play("Song-01");
+        audioController.Play("Song-02");
+    }
+
+    void Update() 
+    {
+
     }
 
     public void changeToScene2()
     {
         SceneManager.LoadScene("");
+        audioController.Play("Song-01");
     }
 }

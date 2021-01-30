@@ -16,16 +16,10 @@ public class Stalactite : MonoBehaviour
     }
 
     
-    void Update()
+    void Start()
     {
         //Despues de cierto tiempo, la flecha se elimina.
-        //Invoke("DestroyItself", 3f);
-    }
-        
-    //Sent when ANOTHER object trigger collider enters a trigger collider attached to this object.
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Destroy(gameObject);
+        Invoke("DestroyItself", 6f);
     }
 
     private void DestroyItself()
