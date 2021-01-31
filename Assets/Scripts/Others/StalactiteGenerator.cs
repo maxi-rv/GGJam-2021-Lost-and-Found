@@ -7,14 +7,20 @@ public class StalactiteGenerator : MonoBehaviour
     //Game Objects
     [SerializeField] private GameObject stalactitePrefab;
 
+    //Component
+    private AudioController audioController;
+
     //Variables
-    public float stalactiteSpeed;
-    public float iHaveAStalactite;
+    private float stalactiteSpeed;
+    private float iHaveAStalactite;
     private bool ready;
 
     // Start is called before the first frame update
     void Awake()
     {
+        // Gets COMPONENT
+        audioController = gameObject.GetComponent<AudioController>();
+
         stalactiteSpeed = 12f;
         ready = true;
     }
@@ -29,6 +35,7 @@ public class StalactiteGenerator : MonoBehaviour
             if(rcHit2D.transform.gameObject.CompareTag("Player") && ready)
             {
                 Shoot();
+                audioController.Play("shoot");
                 ready = false;
                 Invoke("GetReady", 1f);
             }

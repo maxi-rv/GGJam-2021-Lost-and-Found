@@ -22,6 +22,14 @@ public class Stalactite : MonoBehaviour
         Invoke("DestroyItself", 6f);
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void DestroyItself()
     {
         Destroy(gameObject);

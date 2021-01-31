@@ -97,27 +97,31 @@ public class PlayerController : MonoBehaviour
             if (onTheGround)
             {
                 Jump();
+                audioController.Play("jump");
             }
 
             if (!onTheGround && secondJumpAvailable)
             {
                 Jump();
+                audioController.Play("jump");
                 secondJumpAvailable = false;
             }
 
             if (!onTheGround && checkWall.againstWallRight)
             {
                 WallJump(-1);
+                audioController.Play("jump-scream");
             }
 
             if (!onTheGround && checkWall.againstWallLeft)
             {
                 WallJump(1);
+                audioController.Play("jump-scream");
             }
         }
     }
 
-    // COMPLETE?: Changes to an specific form.
+    // NOT USED
     private void ChangeForm(int num)
     {
         //Disables the OLD Form
@@ -137,6 +141,7 @@ public class PlayerController : MonoBehaviour
         {
             MovementOnX(HorizontalAxis);
             animator.SetBool("Moving", true);
+            audioController.Play("move");
 
             if(onTheGround)
                 FlipSprite(HorizontalAxis);
@@ -149,6 +154,7 @@ public class PlayerController : MonoBehaviour
                 MovementOnX(0f);
 
             animator.SetBool("Moving", false);
+            audioController.Stop("move");
         }
     }
 
@@ -204,15 +210,16 @@ public class PlayerController : MonoBehaviour
     {
         onTheGround = checkGround.onTheGround;
 
+        if (!onTheGround)
+        {
+            animator.SetBool("Jumping", true);
+            secondJumpAvailable = true;
+        }
+
         if (onTheGround)
         {
             animator.SetBool("Jumping", false);
             secondJumpAvailable = true;
-        }
-
-        if (!onTheGround && rigidBody2D.velocity.y <= 0f)
-        {
-            animator.SetBool("Falling", true);
         }
     }
 
@@ -222,6 +229,7 @@ public class PlayerController : MonoBehaviour
         if(checkHit.isHurt)
         {
             GetHurt();
+            audioController.Play("hurt");
         }
     }
 

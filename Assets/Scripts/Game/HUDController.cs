@@ -8,7 +8,8 @@ public class HUDController : MonoBehaviour
     // Variables
     public GameObject HPBarFront;
     public GameObject HPBarBack;
-    public Image hpBar;
+    public GameObject StartMessage;
+    private Image hpBar;
     public float currentHP;
     public float maxHP;
 
@@ -16,9 +17,10 @@ public class HUDController : MonoBehaviour
     void Awake()
     {
         // Gets CHILDREN
-        GameObject HPBarFront = gameObject.transform.Find("HealthBar Front").gameObject;
-        GameObject HPBarBack = gameObject.transform.Find("HealthBar Front").gameObject;
-
+        HPBarFront = gameObject.transform.Find("HealthBar Front").gameObject;
+        HPBarBack = gameObject.transform.Find("HealthBar Back").gameObject;
+        StartMessage = gameObject.transform.Find("StartMessage").gameObject;
+        
         // Gets COMPONENT from Children
         hpBar = HPBarFront.GetComponent<Image>();
     }

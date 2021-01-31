@@ -81,8 +81,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3729219149277901841}
-  - component: {fileID: 3729219149277901840}
   - component: {fileID: 3729219149277901870}
+  - component: {fileID: 3729219149277901840}
+  - component: {fileID: 8745093478321386502}
   m_Layer: 0
   m_Name: StalactiteGenerator
   m_TagString: Untagged
@@ -105,21 +106,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3729219149277901840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3729219149277901843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec59821cf0ce578479a562a3a09a036e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stalactitePrefab: {fileID: 2710991197810013124, guid: 86e5e86ca5b22974ea7ab06181a086f7, type: 3}
-  stalactiteSpeed: 0
-  iHaveAStalactite: 0
 --- !u!212 &3729219149277901870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -171,3 +157,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3729219149277901840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729219149277901843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec59821cf0ce578479a562a3a09a036e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stalactitePrefab: {fileID: 2710991197810013124, guid: 86e5e86ca5b22974ea7ab06181a086f7, type: 3}
+--- !u!114 &8745093478321386502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729219149277901843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7609ba2c51157a42a7746918bc6b6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioFiles:
+  - clip: {fileID: 8300000, guid: 87a4ce08b050a904e8505609fff49fed, type: 3}
+    name: shoot
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

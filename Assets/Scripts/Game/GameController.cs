@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     public GameObject playerPrefab;
     private GameObject player;  
     private string currentScene;
+    private bool onPlayingLevel;
 
     void Awake()
     {
@@ -29,9 +30,6 @@ public class GameController : MonoBehaviour
         
         DontDestroyOnLoad(gameObject);
 
-        // Load Scene
-        SceneManager.LoadScene("Testing Level", LoadSceneMode.Additive);
-
         // Gets CHILDREN
         GameObject audioControllerObject = gameObject.transform.Find("AudioController").gameObject;
         GameObject cameraObject = gameObject.transform.Find("Camera").gameObject;
@@ -41,33 +39,79 @@ public class GameController : MonoBehaviour
         audioController = audioControllerObject.GetComponent<AudioController>();
         cameraController = cameraObject.GetComponent<CameraController>();
         hudController = canvas.GetComponent<HUDController>();
+    }
 
+    void Start() 
+    {
+        audioController.Play("ggj-intro");
+    }
+
+    void Update() 
+    {
+        if(Input.GetKey(KeyCode.Return) && !onPlayingLevel)
+        {
+            //Updates HUD
+            hudController.StartMessage.SetActive(false);
+            hudController.activateBar();
+
+            //Loads first Scene
+            currentScene = "Testing Level";
+            loadScene(currentScene);
+            onPlayingLevel = true;
+            audioController.Stop("ggj-intro");
+            audioController.Play("ggj-main");
+
+            //Instantiates player
+            instantiatePlayer();
+        }
+
+        if(onPlayingLevel)
+        {
+            hudController.currentHP = playerController.currentHP;
+
+            if(playerController.currentHP <= 0)
+            {
+                reloadScene(currentScene);
+            }
+        }
+        
+    }
+
+    private void instantiatePlayer()
+    {
         // Instantiating the Player
         Vector3 position = new Vector3(-10f, -5f, 0f);
         Quaternion rotation = new Quaternion(0f, 0f, 0f, 0f);
-        GameObject player = Instantiate(playerPrefab, position, rotation);
+        player = Instantiate(playerPrefab, position, rotation);
 
         // Setting some variables
         playerController = player.GetComponent<PlayerController>();
         cameraController.Players.Add(player.transform);
         hudController.maxHP = playerController.maxHP;
-    }
-
-    void Start()
-    {
-        audioController.Play("ggj-2");
-
         hudController.currentHP = playerController.currentHP;
+        hudController.activateBar();
     }
 
-    void Update() 
+    private void destroyPlayer()
     {
-        hudController.currentHP = playerController.currentHP;
-
-        if(playerController.currentHP <= 0)
-        {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        cameraController.Players.Remove(player.transform);
+        GameObject.Destroy(playerController.gameObject);
     }
+
+    private void loadScene(string scene)
+    {
+        SceneManager.LoadScene(scene, LoadSceneMode.Additive);
+        currentScene = scene;
+    }
+
+    private void reloadScene(string scene)
+    {
+        destroyPlayer();
+        SceneManager.UnloadSceneAsync(scene);
+        SceneManager.LoadScene(scene, LoadSceneMode.Additive);
+        instantiatePlayer();
+    }
+
+    
     
 }
