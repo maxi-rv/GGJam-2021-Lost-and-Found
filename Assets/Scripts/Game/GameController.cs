@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    //CHILDREN
+    private GameObject intro;
+    
     //COMPONENTS
     private static GameController instance;
     private AudioController audioController;
@@ -34,6 +37,7 @@ public class GameController : MonoBehaviour
         GameObject audioControllerObject = gameObject.transform.Find("AudioController").gameObject;
         GameObject cameraObject = gameObject.transform.Find("Camera").gameObject;
         GameObject canvas = gameObject.transform.Find("Canvas").gameObject;
+        intro = gameObject.transform.Find("Intro").gameObject;
 
         // Gets COMPONENT from Children
         audioController = audioControllerObject.GetComponent<AudioController>();
@@ -51,7 +55,7 @@ public class GameController : MonoBehaviour
         if(Input.GetKey(KeyCode.Return) && !onPlayingLevel)
         {
             //Updates HUD
-            hudController.StartMessage.SetActive(false);
+            intro.gameObject.SetActive(false);
             hudController.activateBar();
 
             //Loads first Scene
@@ -72,6 +76,8 @@ public class GameController : MonoBehaviour
             if(playerController.currentHP <= 0)
             {
                 reloadScene(currentScene);
+                audioController.Stop("ggj-main");
+            audioController.Play("ggj-main");
             }
         }
         

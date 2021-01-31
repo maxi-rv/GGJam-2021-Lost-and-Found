@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 2e0de2f270451bd449170eb19acafb46
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6561882453622747556
+    second: pressentertostart_big-Sheetvertical_0
+  - first:
+      213: 2248562626019629300
+    second: pressentertostart_big-Sheetvertical_1
+  - first:
+      213: -4642971379190069715
+    second: pressentertostart_big-Sheetvertical_2
+  - first:
+      213: 3165060524317763674
+    second: pressentertostart_big-Sheetvertical_3
+  - first:
+      213: -2786284904224178214
+    second: pressentertostart_big-Sheetvertical_4
+  - first:
+      213: 2738007132258547228
+    second: pressentertostart_big-Sheetvertical_5
+  - first:
+      213: -4476781061110487616
+    second: pressentertostart_big-Sheetvertical_6
+  - first:
+      213: -3988011976624436911
+    second: pressentertostart_big-Sheetvertical_7
+  - first:
+      213: 8216104940924031256
+    second: pressentertostart_big-Sheetvertical_8
+  - first:
+      213: -3584759785087450373
+    second: pressentertostart_big-Sheetvertical_9
+  - first:
+      213: 5169518694149352353
+    second: pressentertostart_big-Sheetvertical_10
+  - first:
+      213: 35120218638026659
+    second: pressentertostart_big-Sheetvertical_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 225
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4950
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a17d02435d701b50800000000000000
+      internalID: 6561882453622747556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4500
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f89e138bcf743f10800000000000000
+      internalID: 2248562626019629300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4050
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d260211512ad09fb0800000000000000
+      internalID: -4642971379190069715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3600
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58629417cd8ceb20800000000000000
+      internalID: 3165060524317763674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3150
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf3fa854a02559d0800000000000000
+      internalID: -2786284904224178214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2700
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16b1ceeafa5ff520800000000000000
+      internalID: 2738007132258547228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2250
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5205b08574fd1c0800000000000000
+      internalID: -4476781061110487616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1800
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1590c459c3cb7a8c0800000000000000
+      internalID: -3988011976624436911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1350
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811db19b9e7750270800000000000000
+      internalID: 8216104940924031256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2c1c4e7ff504ec0800000000000000
+      internalID: -3584759785087450373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab6380fcd1ddb740800000000000000
+      internalID: 5169518694149352353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressentertostart_big-Sheetvertical_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 4100
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a78a5c17a5cc7000800000000000000
+      internalID: 35120218638026659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

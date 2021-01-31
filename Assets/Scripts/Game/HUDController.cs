@@ -19,7 +19,6 @@ public class HUDController : MonoBehaviour
         // Gets CHILDREN
         HPBarFront = gameObject.transform.Find("HealthBar Front").gameObject;
         HPBarBack = gameObject.transform.Find("HealthBar Back").gameObject;
-        StartMessage = gameObject.transform.Find("StartMessage").gameObject;
         
         // Gets COMPONENT from Children
         hpBar = HPBarFront.GetComponent<Image>();

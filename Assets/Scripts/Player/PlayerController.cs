@@ -94,26 +94,26 @@ public class PlayerController : MonoBehaviour
 
         if(JumpButton)
         {
-            if (onTheGround)
+            if (onTheGround && collectibles>=1)
             {
                 Jump();
                 audioController.Play("jump");
             }
 
-            if (!onTheGround && secondJumpAvailable)
+            if (!onTheGround && secondJumpAvailable && collectibles>=8)
             {
                 Jump();
                 audioController.Play("jump");
                 secondJumpAvailable = false;
             }
 
-            if (!onTheGround && checkWall.againstWallRight)
+            if (!onTheGround && checkWall.againstWallRight && collectibles>=3)
             {
                 WallJump(-1);
                 audioController.Play("jump-scream");
             }
 
-            if (!onTheGround && checkWall.againstWallLeft)
+            if (!onTheGround && checkWall.againstWallLeft && collectibles>=3)
             {
                 WallJump(1);
                 audioController.Play("jump-scream");

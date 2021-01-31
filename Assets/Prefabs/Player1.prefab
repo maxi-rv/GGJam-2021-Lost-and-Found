@@ -522,11 +522,11 @@ MonoBehaviour:
     name: move
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: a03bb2caa942c94448ed2411b3b757da, type: 3}
     name: hurt
-    volume: 0.5
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -538,7 +538,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: a577d4afd71cb6842a79fb4718800893, type: 3}
     name: jump-scream
-    volume: 0.5
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
